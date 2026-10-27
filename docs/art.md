@@ -16,7 +16,7 @@ The containers are `.str` (`strm` + one zlib stream of records) holding `APKF` i
 ## How we extract it
 `runtime/host/art/` (shared with Skylauncher): the provider, the manifest and the rule for a toy's picture are in
 [game_art.md](https://github.com/arkeyan-forge/forge/blob/main/docs/runtime/host/game_art.md); the portraits and their cache (`<data>/SSA/portraits/`,
-`SSA_PORTRAITS`) in [figures.md](https://github.com/arkeyan-forge/forge/blob/main/docs/runtime/host/figures.md) ("Portraits"). Nothing extracted is shipped.
+`SKY_PORTRAITS`) in [figures.md](https://github.com/arkeyan-forge/forge/blob/main/docs/runtime/host/figures.md) ("Portraits"). Nothing extracted is shipped.
 
 ## Tests
 `SSAArtTest` (`runtime/host/art/art_test.cpp`, in `tools/test_all.sh`): the readers on synthetic fixtures, and with

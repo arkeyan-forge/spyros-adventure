@@ -28,7 +28,7 @@ namespace
         static uint32_t lastMode = ~0u, lastHash = ~0u;
         auto seen = [&](uint32_t hash)
         {
-            // SSA_PORTAL_LOG=1: what the title shows, when it changes.
+            // SKY_PORTAL_LOG=1: what the title shows, when it changes.
             if (PortalLogEnabled() && (mode != lastMode || hash != lastHash))
                 fprintf(stderr, "[toybox] portal prompt: mode %u, text hash 0x%08X\n", mode, hash);
             lastMode = mode;
@@ -62,7 +62,7 @@ namespace
 
     constexpr std::string_view IntroMovies[] = { "legal", "atvilogo", "xpeclogo", "tfb" };
 
-    // SSA_LEVEL: the first story level's files are levels\level_027\..., audio\levels\level_027.bnk,
+    // SKY_LEVEL: the first story level's files are levels\level_027\..., audio\levels\level_027.bnk,
     // audio\level_027.lxb and text\<lang>\level_027.lxb.
     const game::Adapter g_adapter = { g_gameInfo, ReadPortalPrompt, true, ssa::SetVoiceLanguage, GlyphTextures, IntroMovies,
         false, nullptr, { "\\level_027", "\\." } };

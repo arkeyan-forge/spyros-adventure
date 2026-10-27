@@ -16,11 +16,11 @@
 Format, ABI and the translation: [docs/runtime/gpu/shaders.md](https://github.com/arkeyan-forge/forge/blob/main/docs/runtime/gpu/shaders.md).
 
 ## How we extract it
-- The player kit: SSABuild reads `shaders.lsa`, `effects.lsa` and the XEX image (`shaders=lsa` in
+- The player kit: SkyBuild reads `shaders.lsa`, `effects.lsa` and the XEX image (`shaders=lsa` in
   `games/ssa/game.txt`), runs XenosRecomp, then a short headless run dumps the run-time shaders and the cache is rebuilt
   ([kit_contract.md](https://github.com/arkeyan-forge/forge/blob/main/docs/release/launcher/kit_contract.md)).
 - A developer build: `tools/shaders/build_cache.sh <iso> [<dump dir>]` (`tools/shaders/lsa.py`, `xdvdfs.py`).
-- Bink's run-time shaders: [bink.md](https://github.com/arkeyan-forge/forge/blob/main/docs/engines/lux/bink.md) (`SSA_DUMP_SHADERS`).
+- Bink's run-time shaders: [bink.md](https://github.com/arkeyan-forge/forge/blob/main/docs/engines/lux/bink.md) (`SKY_DUMP_SHADERS`).
 
 ## Tests
 The game logs `[gpu] shader cache: <n> shaders` at start; `tools/test_all.sh` runs SSA to `level_027` with the cache and

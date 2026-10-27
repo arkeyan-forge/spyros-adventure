@@ -1,4 +1,4 @@
-# What the player kit's SSABuild knows about this game (tools/make_kit.sh copies it to config/ssa/game.txt). No game data:
+# What the player kit's SkyBuild knows about this game (tools/make_kit.sh copies it to config/ssa/game.txt). No game data:
 # the hashes identify the player's own default.xex and must be the ones games/ssa/info.cpp accepts.
 id=ssa
 name=Skylanders: Spyro's Adventure
