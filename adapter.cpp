@@ -58,6 +58,10 @@ namespace
         { 0x16DB4319FA0899CBull, "y_mark", Glyph::Y },
         { 0x629C5B2704B8047Eull, "start", Glyph::Start },  // the title's "Press START to begin"
         { 0xE217909DBA45F2A0ull, "360_rs", Glyph::RightStick }, // hudmenu.str, 256x256 DXT1 (opaque)
+        { 0xB20E0561D39D1F43ull, "back_mark", Glyph::Back },    // uigameimage.str, the BACK pill (&ICON(0,ICON_DETAILS):
+                                                               // "Skylander Info")
+        { 0x24D8176CD8936388ull, "360_rsmark", Glyph::RightStickIcon }, // uigameimage.str, "RS" (&ICON(0,ICON_RS): "Unjoin
+                                                               // Game"); the keyboard has no right-stick click: its keys show
     };
 
     constexpr std::string_view IntroMovies[] = { "legal", "atvilogo", "xpeclogo", "tfb" };
