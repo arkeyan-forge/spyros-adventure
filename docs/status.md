@@ -76,10 +76,24 @@ health bar but no hero), so the presses act on nothing ([100.md](100.md), "Modes
 | 25 | `level_036` | Darklight Crypt | ok: 121 s in the level, 0 faults, 0 `[guard]` | King Occulous |
 | 26 | `level_046` | Dragon's Peak | ok: 121 s in the level, 0 faults, 0 `[guard]` | Vathek |
 
+- **With the hero (2026-10-28) [V].** The tour above used `SKY_LEVEL`, which reads level_027's files from another
+  level's: each level loads and runs, but **no Skylander is created** outside level_027 (no hero, no HUD). The test
+  switch `SKY_NEXT_LEVEL` makes the game itself go to the level (the opening movie's `nextLevel`,
+  [str_levels_loading.md](https://github.com/arkeyan-forge/forge/blob/main/docs/engines/lux/str_levels_loading.md#which-level-a-new-game-starts-and-starting-another-one-lux-ssa-v)).
+  `TOUR_MODE=hero TOUR_SECONDS=110 tools/pipelines/tour_ssa_story.sh <iso> <work dir> <levels...>`: **28 of 28 ok with
+  the hero**, the 27 story levels and `level_hub` (the Ruins' first stage): each run 0 faults, 0 `[guard]`, ~90 s in
+  the level, and the game wrote the figure back (its first-use write, made when the Skylander enters play; the
+  summary's `hero` column), while with `SKY_LEVEL` the figure stays untouched outside level_027. A shot per level shows
+  Gill Grunt's portrait, health bar and level in the corner (evidence: `private/ssa100/bosses/herotour/`,
+  `hero_tour_sheet.png`).
 - **Bosses.** Kaos' final fight starts on arrival (`level_010b`): reached and started [V]. The other bosses
   (column 5) wait at the end of their level, behind its puzzles: a script that walks and attacks blindly does not get
-  there, and the game has no in-level warp we know of. Left to a human ([playtest.md](playtest.md)) or a future
-  position test switch [?].
+  there. The levels' own boss checkpoint (`checkBossFightCheckPoint`, `TeleportToBoss` in level_019) was found but
+  editing it did not move the first spawn [?] (the leads: the engine page above). Left to a human
+  ([playtest.md](playtest.md)) or that lead.
+- **Heroic Challenges.** `SKY_NEXT_LEVEL=Challenge_Level_000` loads the challenge and runs it (its timer, "0 of 100"),
+  but no Skylander appears: challenge levels hold no `Player` thing; the hero likely comes from the Ruins' challenge
+  menu [?].
 - **The ending and the credits.** `tools/pipelines/ssa_ending.sh <iso> <work dir>` (~11 min): a script cannot beat Kaos,
   so the test switch `SKY_MOVIE_SWAP=legal:sl_sc30,atvilogo:credit` ([debugging.md](https://github.com/arkeyan-forge/forge/blob/main/docs/porting/debugging.md))
   makes the two first start-up movies the ending (`sl_sc30.bik`, 5025 frames, 167 s) and the credits roll
