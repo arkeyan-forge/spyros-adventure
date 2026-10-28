@@ -106,3 +106,8 @@ health bar but no hero), so the presses act on nothing ([100.md](100.md), "Modes
 - The real portal and performance on the tester's Windows PC (Skylauncher issues #11, #12).
 - A full playthrough by hand has not been done ([100.md](100.md), [playtest.md](playtest.md)); every story level loads and plays
   2 minutes, Kaos' final fight starts, the ending and credits play ("Story tour" above); the 2-hour soak is done ([100.md](100.md)).
+
+## Difficulty (2026-10-28) [SSA] [V]
+Spyro's Adventure has no difficulty to choose: a new game starts at once and Options (General, Audio, Controls) hold none, so
+`nightmare_from_start` does nothing here (the runtime says so in the log). Swap Force's Nightmare is the one that is locked:
+[its status](https://github.com/arkeyan-forge/swap-force/blob/main/docs/status.md), "Nightmare difficulty".

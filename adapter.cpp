@@ -7,6 +7,7 @@
 #include "ssa.h"
 #include "ssa_portal_prompt.h"
 #include <atomic>
+#include <cctype>
 #include <cstdio>
 #include <ppc_config.h>
 #include <ppc_context.h>
@@ -72,10 +73,24 @@ namespace
 
     constexpr std::string_view IntroMovies[] = { "legal", "atvilogo", "xpeclogo", "tfb" };
 
+    // The level a file starts: \levels\<name>\mission.str (the front end's is one too).
+    std::string LevelOfFile(std::string_view path)
+    {
+        constexpr std::string_view marker = "\\levels\\", mission = "\\mission.str";
+        std::string lower(path);
+        for (char& c : lower)
+            c = char(tolower(static_cast<unsigned char>(c)));
+        size_t at = lower.find(marker), end = lower.rfind(mission);
+        if (at == std::string::npos || end == std::string::npos || end <= at + marker.size() || lower.size() != end + mission.size())
+            return {};
+        std::string name = lower.substr(at + marker.size(), end - at - marker.size());
+        return name.find('\\') == std::string::npos ? name : std::string();
+    }
+
     // SKY_LEVEL: the first story level's files are levels\level_027\..., audio\levels\level_027.bnk,
     // audio\level_027.lxb and text\<lang>\level_027.lxb.
     const game::Adapter g_adapter = { g_gameInfo, ReadPortalPrompt, true, ssa::SetVoiceLanguage, GlyphTextures, IntroMovies,
-        false, nullptr, { "\\level_027", "\\." } };
+        false, nullptr, { "\\level_027", "\\." }, {}, false, {}, nullptr, LevelOfFile };
 }
 
 const game::Adapter& game::Current() { return g_adapter; }
