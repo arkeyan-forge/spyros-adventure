@@ -62,6 +62,12 @@ namespace
                                                                // "Skylander Info")
         { 0x24D8176CD8936388ull, "360_rsmark", Glyph::RightStickIcon }, // uigameimage.str, "RS" (&ICON(0,ICON_RS): "Unjoin
                                                                // Game"); the keyboard has no right-stick click: its keys show
+        // Drawn on the keyboard only (glyphs.h): the Controls page's pad (Options > Controls), keycaps where its buttons are,
+        // and the blue arrows of &ICON(0,ICON_RL) / ICON_UD (the left stick's keys; stick_text.cpp puts them in the hints
+        // that name the stick).
+        { 0xE27708D85EE5F3B7ull, "360_controller", Glyph::Controller },   // startmenu.str, pausemenu.str, 256x256
+        { 0x7BBEBB5A5444F7C2ull, "arrow_rl", Glyph::ArrowsLeftRight },   // uigameimage.str, 64x32
+        { 0xD6AA804FD58B90A5ull, "arrow_ud", Glyph::ArrowsUpDown },      // uigameimage.str, 32x32
     };
 
     constexpr std::string_view IntroMovies[] = { "legal", "atvilogo", "xpeclogo", "tfb" };

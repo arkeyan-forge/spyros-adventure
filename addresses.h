@@ -60,6 +60,13 @@
 #define GAME_HOOK_BinkDoFrame sub_829EDCF8
 #define GAME_HOOK_Movie_Update sub_82852D90
 
+// Text (games/ssa/stick_text.cpp): Text_Lookup(r3 the output string handle, r4 the text database, r5 the CRC-32 key)
+// finds the raw UTF-8 text in three maps (db+32, db+16 the level's, db+0 the language's global text), then
+// Text_Compile(r3 the raw text) copies it, expands $NAME$ and compiles the &ICON(...) markup (sub_82860798). Found from
+// the "MissingText: %08x" string by hand.
+#define GAME_HOOK_Text_Lookup sub_82861060
+#define GAME_HOOK_Text_Compile sub_82860FC8
+
 // Guest data
 namespace game
 {
