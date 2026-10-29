@@ -11,7 +11,8 @@
 namespace portalprompt
 {
     constexpr uint32_t SsaPromptObject = 0x82C569B0, SsaPromptModeOffset = 56, SsaPromptScreenMode = 2;
-    constexpr uint32_t SsaHud = 0x82C56AF8, SsaHudMessageOffset = 3260, SsaMessageTextOffset = 376, SsaTextHashOffset = 432;
+    constexpr uint32_t SsaHud = 0x82C56AF8, SsaHudMessageOffset = 3260, SsaMessageTextOffset = 376,
+                       SsaTextHashOffset = 432;
     constexpr uint32_t SsaPlayer1Hash = 0x049B83C4, SsaPlayer2Hash = 0x9D92D27E;
 
     // The prompt for what the title shows: its mode and the hash of the portal text.

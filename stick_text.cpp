@@ -26,9 +26,26 @@ namespace
     // The stick as the ten languages name it in those hints, with its article where it has one (the longest first: a
     // shorter one is part of a longer one).
     constexpr std::string_view StickNouns[] = {
-        "the Directional Stick", "le stick directionnel", "la levetta direzionale", "la palanca de direcci\xC3\xB3n",
-        "la palanca de control", "de richtingsstick", "das Steuerkreuz", "retningspinden", "ohjaussauvalla", "venstre spak",
-        "styrspaken", "the stick", "le stick", "den Stick", "la levetta", "de stick", "pinden", "sauvaa", "sauva", "spaken",
+        "the Directional Stick",
+        "le stick directionnel",
+        "la levetta direzionale",
+        "la palanca de direcci\xC3\xB3n",
+        "la palanca de control",
+        "de richtingsstick",
+        "das Steuerkreuz",
+        "retningspinden",
+        "ohjaussauvalla",
+        "venstre spak",
+        "styrspaken",
+        "the stick",
+        "le stick",
+        "den Stick",
+        "la levetta",
+        "de stick",
+        "pinden",
+        "sauvaa",
+        "sauva",
+        "spaken",
     };
 
     thread_local uint32_t t_key = 0; // the key Text_Lookup is looking up

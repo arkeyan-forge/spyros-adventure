@@ -23,8 +23,16 @@ namespace
     };
 
     constexpr VoiceLanguage VoiceLanguages[] = {
-        { "en", 4, 0 }, { "fr", 5, 6 }, { "de", 6, 10 }, { "es", 10, 13 }, { "it", 7, 11 },
-        { "nl", 2, 8 }, { "sv", 11, 14 }, { "no", 13, 12 }, { "da", 14, 7 }, { "fi", 12, 9 },
+        { "en", 4, 0 },
+        { "fr", 5, 6 },
+        { "de", 6, 10 },
+        { "es", 10, 13 },
+        { "it", 7, 11 },
+        { "nl", 2, 8 },
+        { "sv", 11, 14 },
+        { "no", 13, 12 },
+        { "da", 14, 7 },
+        { "fi", 12, 9 },
     };
 
     const VoiceLanguage* g_voices = &VoiceLanguages[0]; // English
@@ -51,13 +59,13 @@ bool ssa::SetVoiceLanguage(std::string_view code)
 PPC_FUNC_IMPL(GAME_IMP(Audio_SetLanguage));
 PPC_FUNC(GAME_HOOK(Audio_SetLanguage))
 {
-    auto code = [](uint32_t index)
-    {
+    auto code = [](uint32_t index) {
         if (index >= LanguageCount)
             return "?";
         return static_cast<const char*>(g_memory.Translate(g_memory.Read<uint32_t>(game::LanguageCodes + index * 4)));
     };
-    fprintf(stderr, "[language] text %s, voices %s\n", code(g_memory.Read<uint32_t>(game::LanguageIndex)), code(g_voices->index));
+    fprintf(stderr, "[language] text %s, voices %s\n", code(g_memory.Read<uint32_t>(game::LanguageIndex)),
+        code(g_voices->index));
     ctx.r3.u64 = g_memory.Read<uint32_t>(game::LanguageCodes + g_voices->index * 4);
     GAME_IMP(Audio_SetLanguage)(ctx, base);
 }
