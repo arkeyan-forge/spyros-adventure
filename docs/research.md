@@ -3,7 +3,7 @@
 > **Purpose:** what public sources say about SSA and how far we trust them · **Status:** current (2026-10-26) · **Tags:** [SSA]
 
 ## Sources
-- The other ports and tools (facts only, never GPL code): [prior_art.md](https://github.com/arkeyan-forge/forge/blob/main/docs/porting/prior_art.md).
+- The other ports and tools (facts only, never their code): [prior_art.md](https://github.com/arkeyan-forge/forge/blob/main/docs/porting/prior_art.md).
 - The franchise, cross-game tables (title IDs, engines, portals): [franchise.md](https://github.com/arkeyan-forge/forge/blob/main/docs/porting/franchise.md).
 - Our own analysis of the disc, which outranks every public source:
   [engine_notes.md](https://github.com/arkeyan-forge/forge/blob/main/docs/engines/lux/engine_notes.md) §1 and the [Lux pages](https://github.com/arkeyan-forge/forge/blob/main/docs/engines/lux/README.md).
