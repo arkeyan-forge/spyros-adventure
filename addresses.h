@@ -92,5 +92,7 @@ namespace game
     constexpr uint32_t UltrawideCompositeVertices = 3;
     constexpr int UltrawideCompositeSlot = -1;
     constexpr bool UltrawideCompositeVpos = true;
+    // The post pass whose constants and fetch offsets give its kernel in guest pixels: at scale N, in host pixels.
+    constexpr uint64_t HostKernelPixelShader = 0; // no such pass
     constexpr uint32_t DeviceGlobal = 0x82BB4F94; // holds the device pointer
 }
