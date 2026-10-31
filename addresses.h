@@ -94,5 +94,7 @@ namespace game
     constexpr bool UltrawideCompositeVpos = true;
     // The post pass whose constants and fetch offsets give its kernel in guest pixels: at scale N, in host pixels.
     constexpr uint64_t HostKernelPixelShader = 0; // no such pass
+    // Where the pass keeps its contrast threshold in the pixel constants (a float index; the minimum follows): the edge smoothing setting.
+    constexpr uint32_t HostKernelThreshold = 0; // no known FXAA pass
     constexpr uint32_t DeviceGlobal = 0x82BB4F94; // holds the device pointer
 }
