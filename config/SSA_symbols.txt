@@ -1,5 +1,5 @@
 # Functions identified in default.xex (no symbols available). One per line: address name  # evidence
-# Read by tools/ppcinfo.py; hooks in SSARecomp/ reference these addresses.
+# Read by tools/ppcinfo.py; hooks in runtime/ reference these addresses.
 
 # Direct3D (statically linked XDK D3D9LTCG; many setters are inlined into game code)
 0x82296948 D3DResource_Release            # atomic --refcount at +4, destroys at 0; 97 callers

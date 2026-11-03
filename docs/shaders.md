@@ -16,13 +16,22 @@
 Format, ABI and the translation: [docs/runtime/gpu/shaders.md](https://github.com/arkeyan-forge/forge/blob/main/docs/runtime/gpu/shaders.md).
 
 ## How we extract it
-- The player kit: SkyBuild reads `shaders.lsa`, `effects.lsa` and the XEX image (`shaders=lsa` in
+- The player kit: Arkeyan-Builder reads `shaders.lsa`, `effects.lsa` and the XEX image (`shaders=lsa` in
   `games/ssa/game.txt`), runs XenosRecomp, then a short headless run dumps the run-time shaders and the cache is rebuilt
   ([kit_contract.md](https://github.com/arkeyan-forge/forge/blob/main/docs/release/launcher/kit_contract.md)).
 - A developer build: `tools/shaders/build_cache.sh <iso> [<dump dir>]` (`tools/shaders/lsa.py`, `xdvdfs.py`).
 - Bink's run-time shaders: [bink.md](https://github.com/arkeyan-forge/forge/blob/main/docs/engines/lux/bink.md) (`SKY_DUMP_SHADERS`).
 
 ## Tests
+For the explicit-LOD/cube translator update (2026-11-01), install the rebuilt kit and choose the launcher's game
+update/rebuild so the shader cache is regenerated locally; developers rerun the cache recipe above, configure and
+relink. Arkeyan-Builder invalidates `shaders/stamp.txt` by the new translator binary's SHA-256; changed translated text also
+changes each compiled shader's cache key. It ships in 0.8.0, whose SSA 0.9.5 differs from
+0.7.2's 0.9.4, so the launcher offers the update and the rebuild follows; caches stay on the player's machine. No raw
+SSA containers were available for this lane's census: repeat the prior two-shader explicit-LOD finding on a complete
+local extraction and check reflection mip selection plus the existing grass, shadow, movie and scale 1/2 passes.
+See [translation proof and remaining gaps](https://github.com/arkeyan-forge/forge/blob/main/docs/runtime/gpu/shaders.md).
+
 The game logs `[gpu] shader cache: <n> shaders` at start; `tools/test_all.sh` runs SSA to `level_027` with the cache and
 checks the frames ([testing.md](https://github.com/arkeyan-forge/forge/blob/main/docs/getting-started/testing.md)). The pipeline baseline
 (`games/ssa/pipelines/baseline.zst`) is compiled during the loading screens:

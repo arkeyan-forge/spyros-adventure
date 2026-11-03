@@ -88,10 +88,34 @@ namespace
         return name.find('\\') == std::string::npos ? name : std::string();
     }
 
+    // The F3 menu's Commands page (host/commands.h): Skylauncher's rows for this game, in its order and words.
+    constexpr commands::Row InputRows[] = {
+        { "left_up", "Move up", "Haut", nullptr },
+        { "left_down", "Move down", "Bas", nullptr },
+        { "left_left", "Move left", "Gauche", nullptr },
+        { "left_right", "Move right", "Droite", nullptr },
+        { "a", "1st Power / Accept", "1er pouvoir / Accepter", "a" },
+        { "x", "2nd Power", "2e pouvoir", "x" },
+        { "y", "Use / Talk", "Utiliser / Parler", "y" },
+        { "b", "Special Power / Back", "Pouvoir spécial / Retour", "b" },
+        { "back", "Skylander Info", "Infos du Skylander", "back" },
+        { "start", "Pause", "Pause", "start" },
+        { "right_up", "Shake / Insert / Swing", "Agiter / Insérer / Balancer", nullptr },
+        { "right_down", "Same", "Idem", nullptr },
+        { "right_left", "Same", "Idem", nullptr },
+        { "right_right", "Same", "Idem", nullptr },
+    };
+
+    // The mouse once on: attack 1 on the left button, attack 2 on the right (Skylauncher's rows name them so).
+    constexpr mouse::Default MouseDefaults[] = { { "a", mouse::Left }, { "x", mouse::Right } };
+    // The front end: the game's own menus, where the mouse does nothing.
+    constexpr std::string_view MenuLevels[] = { "frontend" };
+
     // SKY_LEVEL: the first story level's files are levels\level_027\..., audio\levels\level_027.bnk,
     // audio\level_027.lxb and text\<lang>\level_027.lxb.
     const game::Adapter g_adapter = { g_gameInfo, ReadPortalPrompt, true, ssa::SetVoiceLanguage, GlyphTextures,
-        IntroMovies, false, nullptr, { "\\level_027", "\\." }, {}, false, {}, nullptr, LevelOfFile };
+        IntroMovies, false, nullptr, { "\\level_027", "\\." }, {}, false, {}, nullptr, LevelOfFile, 0, {}, InputRows,
+        MouseDefaults, MenuLevels };
 }
 
 const game::Adapter& game::Current() { return g_adapter; }

@@ -12,4 +12,5 @@ namespace
     };
 }
 
-extern const GameInfo g_gameInfo = { "ssa", "Skylanders: Spyro's Adventure", SpyrosAdventureReleases, "SSARecomp" };
+extern const GameInfo g_gameInfo = { "ssa", "Skylanders Spyro's Adventure", SpyrosAdventureReleases,
+    "Skylanders Spyro's Adventure" };

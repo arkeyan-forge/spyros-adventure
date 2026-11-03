@@ -10,7 +10,7 @@ Status: the reference port; plays well on macOS, works on Windows and Linux, ins
 | `addresses.h` | the guest functions to hook (`GAME_HOOK_<Name>`) and the guest data it reads (`namespace game`) |
 | `adapter.cpp` | the `game::Adapter` (`runtime/game.h`): the portal prompt reader, the ultrawide camera hook |
 | `info.cpp` | id, name and the supported disc release (title ID, media ID, SHA-256 of `default.xex`) |
-| `game.txt` | what the player kit's SkyBuild knows about the game (runtime name, config, `default.xex` hash, shader source) |
+| `game.txt` | what the player kit's Arkeyan-Builder knows about the game (runtime name, config, `default.xex` hash, shader source) |
 | `art.json` | the art manifest: which pictures of the disc the launcher and the Toy Box read |
 | `language.cpp`, `ssa.h` | voices in another language than the text |
 | `ssa_portal_prompt.*` | where the title keeps its portal prompt and how it is classified (also built into `SSAPortalTest`) |
