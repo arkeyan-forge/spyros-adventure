@@ -7,21 +7,12 @@ switch_table_file_path = "SSA_switch_tables.toml"
 
 skip_lr = false
 skip_msr = false
-ctr_as_local = true
-xer_as_local = true
-reserved_as_local = true
-cr_as_local = true
-non_argument_as_local = true
-non_volatile_as_local = true
-# Functions XenonRecomp keeps in the context (every register a PPCContext field): they read a register their caller
-# set outside the ABI. Written by tools/xenonrecomp/local_reads.py --toml (docs/tools/toolchain/xenonrecomp.md).
-context_functions = [
-    0x822DFD94, 0x822E0260, 0x822E05F0, 0x823EC688, 0x823F3958, 0x82401FF8, 0x824091E0, 0x8240AF68,
-    0x8242F7A8, 0x8243B678, 0x824417B8, 0x82443FC0, 0x82454170, 0x8245F878, 0x8246A868, 0x8246DE28,
-    0x8246ECF8, 0x82478B78, 0x82479448, 0x8247C780, 0x824CAC50, 0x82524710, 0x825263A8, 0x82526B50,
-    0x8252FE00, 0x825F66B4, 0x825FECA0, 0x82601C88, 0x8260B038, 0x8260B2DC, 0x8286EE88, 0x828A14B8,
-    0x82901C90, 0x8292DBB8,
-]
+ctr_as_local = false
+xer_as_local = false
+reserved_as_local = false
+cr_as_local = false
+non_argument_as_local = false
+non_volatile_as_local = false
 
 restgprlr_14_address = 0x825F5CE0
 savegprlr_14_address = 0x825F5C90
