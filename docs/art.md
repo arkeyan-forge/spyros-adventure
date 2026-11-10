@@ -19,7 +19,7 @@ The containers are `.str` (`strm` + one zlib stream of records) holding `APKF` i
 `SKY_PORTRAITS`) in [figures.md](https://github.com/arkeyan-forge/forge/blob/main/docs/runtime/host/figures.md) ("Portraits"). Nothing extracted is shipped.
 
 ## Tests
-`SSAArtTest` (`runtime/host/art/art_test.cpp`, in `tools/test_all.sh`): the readers on synthetic fixtures, and with
+`ArkeyanArtTest` (`runtime/host/art/art_test.cpp`, in `tools/test_all.sh`): the readers on synthetic fixtures, and with
 `SSA_ISO` the whole extraction (logo, background, title icon, 78 portraits). In a game run:
 `[toybox] 78 portraits in <data>/SSA/portraits` when the Toy Box first opens.
 

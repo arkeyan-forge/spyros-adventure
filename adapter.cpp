@@ -120,6 +120,9 @@ namespace
 
 const game::Adapter& game::Current() { return g_adapter; }
 
+// Skylauncher's glow for this game (its StyleOf).
+uint32_t game::Accent() { return 0x6BBAFF; }
+
 // Ultrawide, the camera: sub_827F56A0 divides the video mode's width by its height and stores it as the display's aspect
 // (game::UltrawideDisplayAspect); the renderer's state copies it and every camera takes its aspect from there and widens
 // its horizontal field of view with it itself (tan(h/2) = tan(v/2) x aspect: Hor+ already), so culling follows. Setting

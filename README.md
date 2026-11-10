@@ -13,7 +13,7 @@ Status: the reference port; plays well on macOS, works on Windows and Linux, ins
 | `game.txt` | what the player kit's Arkeyan-Builder knows about the game (runtime name, config, `default.xex` hash, shader source) |
 | `art.json` | the art manifest: which pictures of the disc the launcher and the Toy Box read |
 | `language.cpp`, `ssa.h` | voices in another language than the text |
-| `ssa_portal_prompt.*` | where the title keeps its portal prompt and how it is classified (also built into `SSAPortalTest`) |
+| `ssa_portal_prompt.*` | where the title keeps its portal prompt and how it is classified (also built into `ArkeyanPortalTest`) |
 | `config/` | XenonRecomp input: `SSA.toml`, `SSA_switch_tables.toml`, `SSA_symbols.txt` |
 | `pipelines/baseline.zst` | the built-in pipeline list (render states and shader hashes, no game content) |
 

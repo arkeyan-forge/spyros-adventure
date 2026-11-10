@@ -92,6 +92,9 @@ namespace game
     constexpr uint32_t UltrawideCompositeVertices = 3;
     constexpr int UltrawideCompositeSlot = -1;
     constexpr bool UltrawideCompositeVpos = true;
+    // Upscaling (d3d/upscale.h): the vertex constant where the position matrix starts: c0-c3, row vectors (Lux), checked
+    // by the camera vote agreeing in 900 of 900 frames of level_008.
+    constexpr int32_t UpscalePositionMatrix = 0;
     // The post pass whose constants and fetch offsets give its kernel in guest pixels: at scale N, in host pixels.
     constexpr uint64_t HostKernelPixelShader = 0; // no such pass
     // Where the pass keeps its contrast threshold in the pixel constants (a float index; the minimum follows): the edge smoothing setting.
