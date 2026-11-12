@@ -1,3 +1,5 @@
+> **This repository is archived.** Its content now lives in [arkeyan-forge/forge](https://github.com/arkeyan-forge/forge) (one repository for the whole project, since 2026-11-12).
+
 # games/ssa/: Skylanders: Spyro's Adventure (Lux engine)
 
 > **Purpose:** what is in SSA's game folder, how to build it, and where its docs are · **Status:** current (2026-10-26) · **Tags:** [SSA] [Lux]
